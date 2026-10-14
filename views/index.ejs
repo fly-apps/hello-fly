@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello from Fly.io</title>
+    <link rel="icon" href="/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..700&display=swap">
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <main>
+      <img class="logo" src="/logo.svg" alt="">
+      <h1>Hello from <span class="accent"><%= appName %></span></h1>
+      <p class="lead">
+        <% if (onFly) { %>
+          Your app is running on Fly.io, close to your users.
+        <% } else { %>
+          Your app is running locally. Deploy it with <code>fly launch --now</code>.
+        <% } %>
+      </p>
+
+      <section class="card">
+        <dl>
+          <div>
+            <dt>Region</dt>
+            <dd><code><%= region %></code><% if (regionName) { %> <span class="muted"><%= regionName %></span><% } %></dd>
+          </div>
+          <div>
+            <dt>Machine</dt>
+            <dd><code><%= machineId %></code></dd>
+          </div>
+          <div>
+            <dt>App</dt>
+            <dd><code><%= appName %></code></dd>
+          </div>
+          <div>
+            <dt>Served at</dt>
+            <dd><%= time %></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Try next</h2>
+        <ul class="steps">
+          <li>
+            <strong>Run in another region</strong>
+            <pre><code>fly regions add nrt</code></pre>
+            <span class="muted">then <code>fly scale count 2</code> and refresh to see a different region.</span>
+          </li>
+          <li>
+            <strong>Scale up the machine</strong>
+            <pre><code>fly scale vm shared-cpu-2x</code></pre>
+          </li>
+          <li>
+            <strong>Watch it run</strong>
+            <pre><code>fly logs</code></pre>
+            <span class="muted">or check <code>fly status</code>.</span>
+          </li>
+        </ul>
+        <p><a href="https://fly.io/docs/">Read the Fly.io docs &rarr;</a></p>
+      </section>
+    </main>
   </body>
 </html>
