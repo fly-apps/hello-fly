@@ -1,16 +1,18 @@
 {
   "name": "hello-fly",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
-  }
+    "ejs": "^3.1.10",
+    "express": "^5.3.0"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": ">=24"
+  },
+  "description": "Hello World demo app for Fly.io",
+  "license": "MIT",
+  "private": true
 }

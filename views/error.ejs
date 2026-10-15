@@ -1,3 +1,21 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= status %> | Fly.io</title>
+    <link rel="icon" href="/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..700&display=swap">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main>
+      <img class="logo" src="/logo.svg" alt="">
+      <h1><%= status %></h1>
+      <p class="lead"><%= message %></p>
+      <p><a href="/">Back home</a></p>
+    </main>
+  </body>
+</html>

@@ -1,5 +1,6 @@
-fly.toml
-Dockerfile
-.dockerignore
 node_modules
 .git
+.github
+fly.toml
+Dockerfile
+*.md
