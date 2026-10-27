@@ -45,6 +45,6 @@ fly open                 # open the app in a browser
 
 ## Things to try
 
-- Run in more regions: `fly regions add nrt`, then `fly scale count 2`
+- Run in more regions: `fly scale count 2 --region nrt`, then route to it with `curl -H "fly-prefer-region: nrt" https://<app>.fly.dev`
 - Change machine size: `fly scale vm shared-cpu-2x`
 - Add a custom domain: `fly certs add example.com`
