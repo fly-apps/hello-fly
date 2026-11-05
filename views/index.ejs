@@ -55,14 +55,15 @@
           <li>
             <strong>Run in another region</strong>
             <div class="cmd">
-              <pre><code>fly regions add nrt</code></pre>
-              <%- include('_copy', { value: 'fly regions add nrt', label: 'command' }) %>
+              <pre><code>fly scale count 2 --region nrt</code></pre>
+              <%- include('_copy', { value: 'fly scale count 2 --region nrt', label: 'command' }) %>
             </div>
+            <span class="muted">then ask for that region explicitly, since requests normally go to the nearest one:</span>
+            <% const curlCmd = 'curl -H "fly-prefer-region: nrt" https://' + appName + '.fly.dev'; %>
             <div class="cmd">
-              <pre><code>fly scale count 2</code></pre>
-              <%- include('_copy', { value: 'fly scale count 2', label: 'command' }) %>
+              <pre><code><%= curlCmd %></code></pre>
+              <%- include('_copy', { value: curlCmd, label: 'command' }) %>
             </div>
-            <span class="muted">then refresh to see a different region.</span>
           </li>
           <li>
             <strong>Scale up the machine</strong>
